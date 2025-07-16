@@ -1,0 +1,229 @@
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #686381);
+  color: #ececec;
+}
+h3,
+h4 {
+  margin: 12px 0 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  position: relative;
+  animation: fadeInUp 0.8s ease both;
+  margin-top: -10px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(45deg, #00d4ff, #3d00ff);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.doctor-card,
+.patient-card {
+  min-height: 300px;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+
+.divider {
+  width: 4px;
+  height: 260px;
+  margin: 0 30px;
+  background: linear-gradient(to bottom, #00d4ff, #3d00ff);
+  border-radius: 2px;
+}
+
+.doctor-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #00d4ff, #3d00ff) 1;
+  padding: 30px 20px 20px;
+  width: 260px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  animation: fadeInUp 0.8s ease both;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 16px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.doctor-card img {
+  width: 80%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.patient-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.patient-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #00d4ff, #3d00ff) 1;
+  padding: 25px 15px 20px;
+  width: 240px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  animation: fadeInUp 0.8s ease both;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.patient-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00d4ff;
+  margin-bottom: 10px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+}
+.info-icon {
+  font-size: 1.1rem;
+  color: #00d4ff;
+}
+.info-text {
+  font-size: 0.9rem;
+  color: #ececec;
+  text-align: left;
+}
+
+.intro {
+  font-size: 0.85rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+.testimonial {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.doctor-card:hover,
+.patient-card:hover {
+  transform: perspective(800px) translateY(-20px) scale(1.05) rotateX(2deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .doctor-card {
+    width: calc(100% - 40px);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+  .doctor-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-row:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: calc(100% - 40px);
+    height: 4px;
+    background: linear-gradient(to right, #00d4ff, #3d00ff);
+    border-radius: 2px;
+    margin: 30px auto 0;
+  }
+
+  .patient-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    align-items: center;
+  }
+  .patient-card {
+    width: calc(100% - 50px);
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+  .patient-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .intro,
+  .testimonial {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+}
